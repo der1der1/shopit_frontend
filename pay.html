@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay</title>
+
+    <!-- 連結到AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- 將 CSS 文件連結到 HTML -->
+    <link rel="stylesheet" href="pay.css">
+    <script src="pay.js"></script>
+</head>
+
+<body>
+    <div id="contener">
+        <header class="col-pc-12 col-mobile-12">
+            <nav id="run">
+                <marquee direction="left" width="100%" scrollamount="10">
+                    品味生活，我們與您同行。精心挑選的商品，為您呈現卓越品質與時尚風格。品味不凡，從這裡開始！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    專為您訂製的個性化體驗！品味生活，從這裡開始。我們將為您提供無與倫比的品質和服務。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    擁有品味，從此開始。我們的產品將為您的生活增添色彩。選擇我們，讓您的每一刻都閃耀奪目！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    時尚與舒適的完美結合！我們的產品將為您帶來無限精彩。追求卓越，選擇我們，將讓您與眾不同！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    獨特風格，不凡魅力。我們的產品與您的品味相得益彰。從細節中展現您的獨特魅力，與我們一同開啟精彩之旅！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    追求品質生活？我們為您打造。從頂級產品到卓越服務，我們將滿足您的一切需求。盡情享受，我們為您而來！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    不僅是商品，更是生活方式的象徵。我們致力於提供最好的選擇，讓您的生活充滿愉悅與精彩。
+                </marquee>
+            </nav>
+            <nav id="tool">
+                <div id="home">
+                    <a href="index.html"><img src="icon/house-solid.svg" class="icon" title="home page" alt="go to homepage"></a>
+                </div>
+                <!-- 搜索區 -->
+                <div id="searchBar">
+                    <label id="label" for="search">搜索Bar:</label>
+                    <input type="text" id="search" name="search_name" placeholder="我想看看...冰箱?" height="10px" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+                    <input type="submit" name="search_button" value="搜索" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+                </div>
+                <!-- 購物車 -->
+                <div id="cart">
+                    <a href="check.html"><img src="icon/cart-shopping-solid.svg" class="icon" alt="cart icon" title="購物車；因此僅前端展示，無連資料庫，故列出部分商品以展示。">
+                    </a>
+                    &nbsp; Hi! &nbsp; 來賓 &nbsp;
+                    <input type="submit" name="logout" value="登出" title="登出；因此僅前端展示，無連資料庫，故固定登入中。">
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="items" data-aos="fade-right" data-aos-duration="500">
+                <!--  -->
+                <div id="item">
+                    <div id="picture"><img src="./pictureTarget/refrige2.png" title="冰箱" width="120px" height="120px"></div>
+                    <div id="info">
+                        <div id="infoName">冰箱</div>
+                        <div id="infoPrice">$21000 x 2 = $ 42000 </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div id="item">
+                    <div id="picture"><img src="./pictureTarget/Bowl7.png" title="木碗" width="120px" height="120px"></div>
+                    <div id="info">
+                        <div id="infoName">木碗</div>
+                        <div id="infoPrice">$70 x 3 = $ 210 </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div id="item">
+                    <div id="picture"><img src="./pictureTarget/pan2.png" title="鍋子" width="120px" height="120px"></div>
+                    <div id="info">
+                        <div id="infoName">鍋子</div>
+                        <div id="infoPrice">$500 x 2 = $ 1000 </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="where" data-aos="fade-down" data-aos-duration="900">
+                <!-- 本div中有5個部分 1. toStore; 2. toHome; 3. 收貨姓名; 4. 付款帳號; 5. 地圖API-->
+                <!-- 1. toStore -->
+                <div id="toStore">
+                    <button id="market" title="market">
+                        <img src="icon/shop.png" alt="to store" height="50px" width="50px">
+                    </button>
+                    <!--711的下拉式表單-->
+                    <select name="store">
+                        <option value="新竹中山店">新竹中山店 - 新竹市東區中山路176號</option>
+                        <option value="大安仁愛店">大安仁愛店 - 台北市大安區仁愛路四段345號</option>
+                        <option value="中正忠孝店">中正忠孝店 - 台北市中正區忠孝西路一段50號</option>
+                        <option value="西屯文心店">西屯文心店 - 台中市西屯區文心路三段100號</option>
+                        <option value="南屯大墩店">南屯大墩店 - 台中市南屯區大墩路一段766號</option>
+                        <option value="前鎮中華店">前鎮中華店 - 高雄市前鎮區中華五路596號</option>
+                        <option value="苓雅中華店">苓雅中華店 - 高雄市苓雅區中華四路282號</option>
+                        <option value="板橋文化店">板橋文化店 - 新北市板橋區文化路一段128號</option>
+                        <option value="新店中正店">新店中正店 - 新北市新店區中正路151號</option>
+                        <option value="桃園中正店">桃園中正店 - 桃園市桃園區中正路550號</option>
+                        <option value="中壢中北店">中壢中北店 - 桃園市中壢區中北路二段466號</option>
+                    </select>
+                    <input type="submit" name="to_store" value="請選擇貨運711">
+                </div>
+
+                <!-- 2. toHome -->
+                <div id="toHome">
+                    <button id="express" title="express">
+                        <img src="icon/home.png" alt="to home" height="50px" width="50px">
+                    </button>
+                    <label for="deliver to your home">輸入住址：</label>
+                    <input type="text" name="address" value="新竹市東區長春路">
+                    <input type="submit" name="to_address" value="選擇宅配到家">
+                </div>
+
+                <!--3. 收貨姓名; 4. 付款帳號 -->
+                <div id="check_name">
+                    <label for="deliver to your home">請輸入收貨人姓名：</label>
+                    <input type="text" name="name_input" value="來賓">
+                    <input type="submit" name="name_submit" value="確認">
+                </div>
+
+                <div id="check_account">
+                    <label for="deliver to your home">請輸入扣款帳號：</label>
+                    <input type="text" name="account_input" value="0191227-0082229">
+                    <input type="submit" name="account_submit" value="確認">
+                </div>
+
+                <!-- 5. 地圖API -->
+                <div id="LocationMap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13321.760098507479!2d120.21569612878777!3d22.998651853240307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1705164389576!5m2!1szh-TW!2stw" width="100%" height="255px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div id="trading" data-aos="fade-left" data-aos-duration="700">
+            <table id="check_list"> 購買確認清單
+                <tr><td>收件姓名：</td><td>來賓</td></tr>
+                <tr><td>訂購帳號：</td><td>來賓</td></tr>
+                <tr><td>扣款帳號：</td><td>0191227-0082229</td></tr>
+                <tr><td>貨運方式：</td><td>超商取貨(位置以下)</td></tr>
+                <tr><td>收件商店：</td><td>台北市信義店</td></tr>
+
+                <tr><th>名稱</th><th>編號</th><th>數量</th><th>單價</th><th>小計</th></tr>
+                <tr><th>_____</th><th>_____</th><th>_____</th><th>_____</th><th>_____</th></tr>
+                
+                <tr><th>冰箱</th><th>51</th><th>2</th><th>21000</th><th>42000</th></tr>
+                <tr><th>木碗</th><th>32</th><th>3</th><th>70</th><th>210</th></tr>
+                <tr><th>鍋子</th><th>28</th><th>2</th><th>500</th><th>1000</th></tr>
+
+                <tr><th>_____</th><th>_____</th><th>_____</th><th>_____</th><th>_____</th></tr>
+                <tr><td>交易金額：</td><td>$ 43210</td></tr>
+                </table>
+                
+
+                <button title="結帳" name="checkit" id="checkit" onclick="list_sent">
+                    <h3><a href="index.html" id="checkit_word">結帳</a></h3>
+                    <img src="icon/bill.png" alt="pay for it" width="50x" height="50px">
+                </button>
+
+            </div>
+
+            <footer>
+                <div id="author">
+                    <p>本網站由德斯貿易公司(Desmo co.,lmt.)所有 Copy Right &copy; 2023</p>
+                </div>
+
+                <div id="cont"><a href="contact.html">Contact Us</a> </div>
+            </footer>
+        </main>
+    </div>
+    </form>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check</title>
+
+    <!-- 連結到AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- 將 CSS & JS 文件連結到 HTML -->
+    <link rel="stylesheet" href="check.css">
+    <script src="check.js"></script>
+</head>
+
+<body>
+    <header class="col-pc-12 col-mobile-12">
+        <nav id="run">
+            <marquee direction="left" width="100%" scrollamount="10">
+                品味生活，我們與您同行。精心挑選的商品，為您呈現卓越品質與時尚風格。品味不凡，從這裡開始！
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                專為您訂製的個性化體驗！品味生活，從這裡開始。我們將為您提供無與倫比的品質和服務。
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                擁有品味，從此開始。我們的產品將為您的生活增添色彩。選擇我們，讓您的每一刻都閃耀奪目！
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                時尚與舒適的完美結合！我們的產品將為您帶來無限精彩。追求卓越，選擇我們，將讓您與眾不同！
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                獨特風格，不凡魅力。我們的產品與您的品味相得益彰。從細節中展現您的獨特魅力，與我們一同開啟精彩之旅！
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                追求品質生活？我們為您打造。從頂級產品到卓越服務，我們將滿足您的一切需求。盡情享受，我們為您而來！
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                不僅是商品，更是生活方式的象徵。我們致力於提供最好的選擇，讓您的生活充滿愉悅與精彩。
+            </marquee>
+        </nav>
+        <nav id="tool">
+            <div id="home">
+                <a href="index.html"><img src="icon/house-solid.svg" class="icon" title="home page" alt="go to homepage"></a>
+            </div>
+            <!-- 搜索區 -->
+            <div id="searchBar">
+                <label id="label" for="search">搜索Bar:</label>
+                <input type="text" id="search" name="search_name" placeholder="我想看看...冰箱?" height="10px" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+                <input type="submit" name="search_button" value="搜索" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+            </div>
+            <!-- 購物車 -->
+            <div id="cart">
+                <a href="check.html"><img src="icon/cart-shopping-solid.svg" class="icon" alt="cart icon" title="購物車；因此僅前端展示，無連資料庫，故列出部分商品以展示。">
+                </a>
+                &nbsp; Hi! &nbsp; 來賓 &nbsp;
+                <input type="submit" name="logout" value="登出" title="登出；因此僅前端展示，無連資料庫，故固定登入中。">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="items">
+            <div id="item">
+                <h2>您的購物車內尚無商品 Or >></h2>
+            </div>
+            <!--  -->
+            <div data-aos="fade-up" class="item">
+                <div id="item_pic">
+                    <img src="./pictureTarget/refrige.jpg" width="140px" height="140px">
+                </div>
+                <div id="item_description">
+                    <p id="p">冰箱</br></br>45000</p>
+                </div>
+                <div id="item_money">
+                    <div id="item_money_total"> Price $ = 45000</div>
+                    <div id="item_money_top">
+                        <p> number: 1</p>
+                        <input type="number" min="0" name="num_adjust" value="" id="num_adjust">
+                        <input type="submit" name="num_submit" value="確認數量" id="num_submit">
+                    </div>
+                    <div id="item_money_total"> SUM $ = 45000</div>
+                </div>
+                <div id="item_tradding_item">
+                    <button id="choosing" name="choosing_' . $id . '">
+                        <img src="icon/check.png" title="I Want" height="25px" width="25px" id="check_icon">
+                        <div id="select">
+                            <p id="select_word">已選擇！</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!--  -->
+            <div data-aos="fade-up" class="item">
+                <div id="item_pic">
+                    <img src="./pictureTarget/refrige.jpg" width="140px" height="140px">
+                </div>
+                <div id="item_description">
+                    <p id="p">冰箱</br></br>45000</p>
+                </div>
+                <div id="item_money">
+                    <div id="item_money_total"> Price $ = 45000</div>
+                    <div id="item_money_top">
+                        <p> number: 1</p>
+                        <input type="number" min="0" name="num_adjust" value="" id="num_adjust">
+                        <input type="submit" name="num_submit" value="確認數量" id="num_submit">
+                    </div>
+                    <div id="item_money_total"> SUM $ = 45000</div>
+                </div>
+                <div id="item_tradding_item">
+                    <button id="choosing" name="choosing_' . $id . '">
+                        <img src="icon/check.png" title="I Want" height="25px" width="25px" id="check_icon">
+                        <div id="select">
+                            <p id="select_word">已選擇！</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!--  -->
+            <div data-aos="fade-up" class="item">
+                <div id="item_pic">
+                    <img src="./pictureTarget/refrige.jpg" width="140px" height="140px">
+                </div>
+                <div id="item_description">
+                    <p id="p">冰箱</br></br>45000</p>
+                </div>
+                <div id="item_money">
+                    <div id="item_money_total"> Price $ = 45000</div>
+                    <div id="item_money_top">
+                        <p> number: 1</p>
+                        <input type="number" min="0" name="num_adjust" value="" id="num_adjust">
+                        <input type="submit" name="num_submit" value="確認數量" id="num_submit">
+                    </div>
+                    <div id="item_money_total"> SUM $ = 45000</div>
+                </div>
+                <div id="item_tradding_item">
+                    <button id="choosing" name="choosing_' . $id . '">
+                        <img src="icon/check.png" title="I Want" height="25px" width="25px" id="check_icon">
+                        <div id="select">
+                            <p id="select_word">已選擇！</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!--  -->
+            <div data-aos="fade-up" class="item">
+                <div id="item_pic">
+                    <img src="./pictureTarget/refrige.jpg" width="140px" height="140px">
+                </div>
+                <div id="item_description">
+                    <p id="p">冰箱</br></br>45000</p>
+                </div>
+                <div id="item_money">
+                    <div id="item_money_total"> Price $ = 45000</div>
+                    <div id="item_money_top">
+                        <p> number: 1</p>
+                        <input type="number" min="0" name="num_adjust" value="" id="num_adjust">
+                        <input type="submit" name="num_submit" value="確認數量" id="num_submit">
+                    </div>
+                    <div id="item_money_total"> SUM $ = 45000</div>
+                </div>
+                <div id="item_tradding_item">
+                    <button id="choosing" name="choosing_' . $id . '">
+                        <img src="icon/check.png" title="I Want" height="25px" width="25px" id="check_icon">
+                        <div id="select">
+                            <p id="select_word">已選擇！</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!--  -->
+            <div data-aos="fade-up" class="item">
+                <div id="item_pic">
+                    <img src="./pictureTarget/refrige.jpg" width="140px" height="140px">
+                </div>
+                <div id="item_description">
+                    <p id="p">冰箱</br></br>45000</p>
+                </div>
+                <div id="item_money">
+                    <div id="item_money_total"> Price $ = 45000</div>
+                    <div id="item_money_top">
+                        <p> number: 1</p>
+                        <input type="number" min="0" name="num_adjust" value="" id="num_adjust">
+                        <input type="submit" name="num_submit" value="確認數量" id="num_submit">
+                    </div>
+                    <div id="item_money_total"> SUM $ = 45000</div>
+                </div>
+                <div id="item_tradding_item">
+                    <button id="choosing" name="choosing_' . $id . '">
+                        <img src="icon/check.png" title="I Want" height="25px" width="25px" id="check_icon">
+                        <div id="select">
+                            <p id="select_word">已選擇！</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <footer>
+                <form method="post" enctype="multipart/form-data">
+                    <div id="trading_bar">
+                        <button id="onsell_ticket_button">
+                            <img src="icon/ticket.png" title="gain perfact price" alt="ticketsIcon" height="70px" width="70px">
+                            <p id="ticketword">YOUR ONSELL TICKETS HERE !</p>
+                        </button>
+
+                        <button id="check" name="check" title="pay for my favorits">
+                            
+                            <img src="icon/takeaway.png" alt="takeawayIcon" height="65px" width="65px">
+                            <span id="checkword"><a href="pay.html">Purchase !!</a></span>
+                        </button>
+                    </div>
+                </form>
+
+                <div id="last_footer">
+                    <div id="author">
+                        <p>本網站由德斯貿易公司(Desmo co.,lmt.)所有 Copy Right &copy; 2023</p>
+                    </div>
+                    <div id="cont"><a href="contact.html">Contact Us</a> </div>
+                </div>
+            </footer>
+    </main>
+    <script>
+        AOS.init({
+            duration: 500,
+        });
+    </script>
+</body>
+
+</html>

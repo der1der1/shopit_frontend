@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- http://localhost/Shoopit_frontend/ -->
+<!-- 懶人直接貼網址 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopit</title>
+    <!-- import of Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- import of Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 連結到AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- 將 CSS 文件連結到 HTML -->
+    <link rel="stylesheet" href="index.css">
+    <!-- 將 JS  文件連結到 HTML -->
+    <script src="index.js"></script>
+</head>
+
+<body id="top">
+    <div id="contener">
+        <header class="col-pc-12 col-mobile-12">
+            <nav id="run">
+                <marquee direction="left" width="100%" scrollamount="10">
+                    品味生活，我們與您同行。精心挑選的商品，為您呈現卓越品質與時尚風格。品味不凡，從這裡開始！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    專為您訂製的個性化體驗！品味生活，從這裡開始。我們將為您提供無與倫比的品質和服務。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    擁有品味，從此開始。我們的產品將為您的生活增添色彩。選擇我們，讓您的每一刻都閃耀奪目！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    時尚與舒適的完美結合！我們的產品將為您帶來無限精彩。追求卓越，選擇我們，將讓您與眾不同！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    獨特風格，不凡魅力。我們的產品與您的品味相得益彰。從細節中展現您的獨特魅力，與我們一同開啟精彩之旅！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    追求品質生活？我們為您打造。從頂級產品到卓越服務，我們將滿足您的一切需求。盡情享受，我們為您而來！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    不僅是商品，更是生活方式的象徵。我們致力於提供最好的選擇，讓您的生活充滿愉悅與精彩。
+                </marquee>
+            </nav>
+                <nav id="tool">
+                    <div id="home">
+                        <a href="index.html"><img src="icon/house-solid.svg" class="icon" title="home page" alt="go to homepage"></a>
+                    </div>
+                    <div id="check_list">
+                        <a href="list.html"><img src="icon/check-list.png" class="icon" alt="go to check list" width="20px" height="20px" title="訂單清單。管理者登入才會顯示；此僅前端展示！"></a>
+                    </div>
+                    <!-- 搜索區 -->
+                    <div id="searchBar">
+                        <label id="label" for="search">搜索Bar:</label>
+                        <input type="text" id="search" name="search_name" placeholder="我想看看...冰箱?" height="10px" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+                        <input type="submit" name="search_button" value="搜索" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+                    </div>
+                    <!-- 購物車 -->
+                    <div id="cart">
+                        <a href="check.html"><img src="icon/cart-shopping-solid.svg" class="icon" alt="cart icon" title="購物車；因此僅前端展示，無連資料庫，故列出部分商品以展示。">
+                        </a>
+                        &nbsp; Hi! &nbsp; 來賓 &nbsp;
+                        <input type="submit" name="logout" value="登出" title="登出；因此僅前端展示，無連資料庫，故固定登入中。">
+                    </div>
+                </nav>
+        </header>
+
+
+        <main>
+            <div id="middbody" class="ROW">
+                <!-- 普通螢幕，顯示的aside(小螢幕點開顯示) -->
+                <aside id="aside" class="col-pc-2 col-mobile-12">
+                    <div id="infos" style="margin:0 0 20px 0;">
+                        <h5 style="margin:0 0 10px 0;">您的訊息：</h5>
+                        <div id="info0" data-aos="fade-right" data-aos-duration="300" class="info">&nbsp;&nbsp;【最新】<br>訂購商品出貨嘍！夾子、寶血之碗&nbsp;&nbsp;2024/05/08</div>
+                        <div id="info1" data-aos="fade-right" data-aos-duration="600" class="info">訂購商品出貨嘍！wifi2024/05/08</div>
+                        <div id="info2" data-aos="fade-right" data-aos-duration="900" class="info">訂購商品出貨嘍！鍋子2024/05/08 10am:31:06</div>
+                    </div>
+                    <!-- 訊息框結束 -->
+
+                    <h4>產品分類：</h4>
+                    <div id="Products">
+                        <ul>
+                            <li><a href="">肥皂</a></li>
+                            <li><a href="">鍋子</a></li>
+                            <li><a href="">地毯</a></li>
+                            <li><a href="">燈泡</a></li>
+                            <li><a href="">吸塵器</a></li>
+                            <li><a href="">行李箱</a></li>
+                            <li><a href="">筆電</a></li>
+                            <li><a href="">墨鏡</a></li>
+                            <li><a href="">沙發</a></li>
+                            <li><a href="">夾子</a></li>
+                            <li><a href="">冰箱</a></li>
+                            <li><a href="">碗</a></li>
+                            <li><a href="">電視</a></li>
+                            <li><a href="">桌子</a></li>
+                            <li><a href="">wifi</a></li>
+                            <li><a href="">洗衣機</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <div id="contents" class="col-pc-10 col-mobile-12">
+                    <!-- 下分三大類greatPromotion、interested、normal -->
+                    <div id="greatPromotion">
+                        <!-- Retrieved the div code from Bootstrap -->
+                        <!-- 廣告圖display -->
+                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in" data-aos-duration="400">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="4000">
+                                    <img src="./pictureTarget/ad1.png" class="d-block w-100" height="255px">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <img src="./pictureTarget/ad2.png" class="d-block w-100" height="255px">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <img src="./pictureTarget/ad3.png" class="d-block w-100" height="255px">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <img src="./pictureTarget/ad4.png" class="d-block w-100" height="255px">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <!-- Bootstrap end -->
+
+                    </div>
+                    <div id="interested" data-aos="zoom-in" data-aos-duration="800">
+                        <div id="interested_title">
+                            <p>推薦你可能也喜歡!</p>
+                        </div>
+
+                        <div id="items">
+                            <a href="itemPage.html">
+                                <button id="item" height="210px" ; width="180px" ;>
+                                    <img src="pictureTarget/clamp4.jpg" alt="" title="優質特賣" width="110px" height="110px">
+                                    <div id="level1">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                    </div>
+                                    <div id="level2">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price1">20</div>
+                                        <img src="icon/arrow-right.png" alt="" height="15px" width="15">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">5</div>
+                                    </div>
+                                    <div id="intro">幫我們把衣服夾起來</div>
+                                </button>
+                            </a>
+                            <a href="itemPage.html">
+                                <button id="item" height="210px" ; width="180px" ;>
+                                    <img src="pictureTarget/clamp4.jpg" alt="" title="優質特賣" width="110px" height="110px">
+                                    <div id="level1">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                    </div>
+                                    <div id="level2">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price1">20</div>
+                                        <img src="icon/arrow-right.png" alt="" height="15px" width="15">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">5</div>
+                                    </div>
+                                    <div id="intro">幫我們把衣服夾起來</div>
+                                </button>
+                            </a>
+                            <a href="itemPage.html">
+                                <button id="item" height="210px" ; width="180px" ;>
+                                    <img src="./pictureTarget/pc.png" alt="" title="優質特賣" width="110px" height="110px">
+                                    <div id="level1">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                    </div>
+                                    <div id="level2">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price1">35000</div>
+                                        <img src="icon/arrow-right.png" alt="" height="15px" width="15">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">29000</div>
+                                    </div>
+                                    <div id="intro">筆記型電腦，四海皆為辦公室。</div>
+                                </button>
+                            </a>
+                            <a href="itemPage.html">
+                                <button id="item" height="210px" ; width="180px" ;>
+                                    <img src="./pictureTarget/TV.png" alt="" title="優質特賣" width="110px" height="110px">
+                                    <div id="level1">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                    </div>
+                                    <div id="level2">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price1">25000</div>
+                                        <img src="icon/arrow-right.png" alt="" height="15px" width="15">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">13000</div>
+                                    </div>
+                                    <div id="intro">過年就要換新電視</div>
+                                </button>
+                            </a>
+                            <a href="itemPage.html">
+                                <button id="item" height="210px" ; width="180px" ;>
+                                    <img src="./pictureTarget/rug.png" alt="" title="優質特賣" width="110px" height="110px">
+                                    <div id="level1">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                    </div>
+                                    <div id="level2">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price1">22000</div>
+                                        <img src="icon/arrow-right.png" alt="" height="15px" width="15">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">12000</div>
+                                    </div>
+                                    <div id="intro">每人每戶家中都該有地毯吧</div>
+                                </button>
+                            </a>
+                            <a href="itemPage.html">
+                                <button id="item" height="210px" ; width="180px" ;>
+                                    <img src="./pictureTarget/travelBox.png" alt="" title="優質特賣" width="110px" height="110px">
+                                    <div id="level1">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                    </div>
+                                    <div id="level2">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price1">3700</div>
+                                        <img src="icon/arrow-right.png" alt="" height="15px" width="15">
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">3500</div>
+                                    </div>
+                                    <div id="intro">骨董行李箱招標</div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="normal" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                        <a href="itemPage.html">
+                            <button id="oneProduct" height= "120px" width= "240px">
+                                <div id="pic">
+                                    <img src="pictureTarget/sunglasses.jpg" alt="" width="110px" height="110px">
+                                </div>
+                                <div id="description">
+                                    <div id="title">商品</div>
+                                    <div id="level">
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-solid.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-stroke.svg" alt="" height="15px" width="15"></div>
+                                        <div id="stars"><img src="icon/star-regular.svg" alt="" height="15px" width="15"></div>
+                                        <img src="icon/dollar.svg" alt="" height="15px" width="15">
+                                        <div id="price">200</div>
+                                    </div>
+                                    <div id="intro">商品的前端展示，未連動資料庫。</div>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div id="editing_page"><a href="edit.html">go to Editing Page</a> </div>
+        <div id="author">
+            <p>本網站由德斯貿易公司(Desmo co.,lmt.)所有 Copy Right &copy; 2023</p>
+        </div>
+        <div id="cont"><a href="contact.html">Contact Us</a> </div>
+    </footer>
+    <script>
+        AOS.init({
+            duration: 500,
+        });
+    </script>
+
+</body>
+<span id="toTop"> <a href="#top"><img src="icon/arrow-up.svg" alt="" title="to top" height="35px" width="35px"></a></span>
+
+</html>

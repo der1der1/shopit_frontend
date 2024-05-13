@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 將 CSS 文件連結到 HTML -->
+    <link rel="stylesheet" href="itemPage.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品個別展示</title>
+</head>
+
+<body id="top">
+    <div id="contener">
+        <header class="col-pc-12 col-mobile-12">
+            <nav id="run">
+                <marquee direction="left" width="100%" scrollamount="10">
+                    品味生活，我們與您同行。精心挑選的商品，為您呈現卓越品質與時尚風格。品味不凡，從這裡開始！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    專為您訂製的個性化體驗！品味生活，從這裡開始。我們將為您提供無與倫比的品質和服務。
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    擁有品味，從此開始。我們的產品將為您的生活增添色彩。選擇我們，讓您的每一刻都閃耀奪目！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    時尚與舒適的完美結合！我們的產品將為您帶來無限精彩。追求卓越，選擇我們，將讓您與眾不同！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    獨特風格，不凡魅力。我們的產品與您的品味相得益彰。從細節中展現您的獨特魅力，與我們一同開啟精彩之旅！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    追求品質生活？我們為您打造。從頂級產品到卓越服務，我們將滿足您的一切需求。盡情享受，我們為您而來！
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    不僅是商品，更是生活方式的象徵。我們致力於提供最好的選擇，讓您的生活充滿愉悅與精彩。
+                </marquee>
+            </nav>
+            <nav id="tool">
+                <div id="home">
+                    <a href="index.html"><img src="icon/house-solid.svg" class="icon" title="home page" alt="go to homepage"></a>
+                </div>
+
+                <!-- 搜索區 -->
+                <div id="searchBar">
+                    <label id="label" for="search">搜索Bar:</label>
+                    <input type="text" id="search" name="search_name" placeholder="我想看看...冰箱?" height="10px" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+                    <input type="submit" name="search_button" value="搜索" title="可搜尋商品名與種類；此僅前端展示，未連資料庫無法使用！">
+                </div>
+                <!-- 購物車 -->
+                <div id="cart">
+                    <a href="check.html"><img src="icon/cart-shopping-solid.svg" class="icon" alt="cart icon" title="購物車；因此僅前端展示，無連資料庫，故列出部分商品以展示。">
+                    </a>
+                    &nbsp; Hi! &nbsp; 來賓 &nbsp;
+                    <input type="submit" name="logout" value="登出" title="登出；因此僅前端展示，無連資料庫，故固定登入中。">
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="interested_product">
+                <div id="picture1"><img src="./pictureTarget/vaccum2.jpg" alt="" height="340px" width="340px   "></div>
+                <div id="info">
+                    <div id="title_select">
+                        <div id="title">高級吸塵器</div>
+                        <input type="submit" name="select_product" id="select" value="加入購物車">
+                    </div>
+                    <div id="paragraph">售價 $ 2999 </br></br></br>解決家庭紛爭神器</div>
+                </div>
+            </div>
+
+            <div id="may_interesteds">
+                <a href="itemPage.html" id="item2">
+                    <div id="title2">大冰箱</div>
+                    <div id="picture2"><img src="./pictureTarget/refrigerator-2420419_1280.png" height=100px width=100px></div>
+                    <div id="paragraph2">只要家裡有冰箱，食物都能放香香></div>
+                </a>
+                <a href="itemPage.html" id="item2">
+                    <div id="title2">wifi 機</div>
+                    <div id="picture2"><img src="./pictureTarget/wifi.png" height=100px width=100px></div>
+                    <div id="paragraph2">多了wifi 常常和wife say Hi</div>
+                </a>
+                <a href="itemPage.html" id="item2">
+                    <div id="title2">燈泡</div>
+                    <div id="picture2"><img src="./pictureTarget/lightbulb-2010022_1280.jpg" height=100px width=100px></div>
+                    <div id="paragraph2">點一顆光明燈，不怕半夜老爺子駕崩</div>
+                </a>
+                <a href="itemPage.html" id="item2">
+                    <div id="title2">洗衣機</div>
+                    <div id="picture2"><img src="./pictureTarget/washing-machine.jpg" height=100px width=100px></div>
+                    <div id="paragraph2">雖然有了一台洗衣機，但免不了擲杯誰要去晾衣服></div>
+                </a>
+            </div>
+
+            <footer>
+                <div id="author">
+                    <p>本網站由德斯貿易公司(Desmo co.,lmt.)所有 Copy Right &copy; 2023</p>
+                </div>
+
+                <div id="cont"><a href="contact.html">Contact Us</a> </div>
+            </footer>
+        </main>
+    </div>
+</body>
+<span id="toTop"> <a href="#top"><img src="icon/arrow-up.svg" alt="" title="to top" height="35px" width="35px"></a></span>
+
+</html>

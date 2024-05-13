@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- 將 CSS 文件連結到 HTML -->
+    <link rel="stylesheet" href="contact.css">
+    <!-- 將 JS  文件連結到 HTML -->
+    <script src="contact.js"></script>
+</head>
+
+<body id="top">
+    <div id="contener">
+
+        <header>
+            <h1>與我們聯絡 Contact us</h1>
+        </header>
+        <main>
+            <div id="choicies" class="choiciesclass">
+                <button id="mail_us" class="mail_us"><a href="mailto: deniel87deniel87@gmail.com">Mail to Us</a></button>
+                <button id="message_local" class="message_local" onclick="message_card_shows()">Message on Local</button>
+            </div>
+
+            <!--email 如果以登入會直接帶入 -->
+            <div id="message_card" class="message_card">
+
+            <div id="zone1">
+                        <div><input type="text" id="name" name="name" placeholder="輸入姓名* Name plz"></div>
+                        <div><input type="submit" name="submit" id="submit" value="送出 Submit"></div>
+                    </div>
+
+                    <div id="zone2">
+                        <div><input type="text" id="phone" name="phone" placeholder="聯絡電話 Phone Num"></div>
+                        <div><input type="text" id="mail" name="mail" placeholder="電子郵件* E-mail"></div>
+                    </div>
+                    <div id="zone3">
+                        <textarea name="text" id="text" cols="20" rows="15" placeholder="聯繫內容(請少於300中文字)* Content (less than 600 words)"></textarea>
+                    </div>
+                </div>
+        </main>
+        <footer>
+            <div id="home_page"><a href="index.html">HOME</a></div>
+            <div id="author">
+                <p>本網站由德斯貿易公司(Desmo co.,lmt.)所有 Copy Right &copy; 2023</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
